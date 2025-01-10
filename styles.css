@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #1f0647;
+    font-family: 'Arial', sans-serif;
+    transition: background-image 0.5s ease-in-out;
+    background-color: #f0f0f0
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    height: auto;
+    overflow: hidden;
+}
+
+.city-input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 50px 0 0 50px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    outline: none;
+}
+
+.city-input:focus {
+    border-color: rgb(37, 138, 37);
+}
+
+.search-btn {
+    padding: 10px 20px;
+    border-radius: 0 50px 50px 0;
+    font-size: 1.1rem;
+    background-color: rgb(37, 138, 37);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: rgb(28, 104, 28); 
+}
+
+#weather-div {
+    margin-top: 30px;
+    display: none;
+}
+
+h3#city-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1f0647;
+    margin: 10px 0;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1f0647;
+}
+
+#weather-icon {
+    width: 50px; 
+    height: 50px;  
+}
+
+.error-message {
+    color: rgb(238, 15, 15);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;  
+}
+
+#weather-tips {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #1f0647;
+    font-size: 1rem;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#weather-tips.show {
+    opacity: 1; 
+    max-height: 200px;
+    transform: translateY(10px); 
+}
+
+#tips {
+    animation: pop-text 1s ease-in-out;
+}
+
+@keyframes pop-text {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2); 
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Different Screen Sizes */
+
+/* For tablet and smaller devices (up to 768px) */
+@media (max-width: 768px) {
+    body {
+        background-position: top; 
+    }
+
+    .container {
+        width: 85%;  
+        padding: 20px;
+    }
+
+    .city-input {
+        width: 80%; 
+        border-radius: 50px; 
+    }
+
+    .search-btn {
+        width: 80%;
+        margin-top: 10px;
+        border-radius: 50px;
+    }
+
+    h3#city-name {
+        font-size: 1.5rem; 
+    }
+
+    h4 {
+        font-size: 1rem;  
+    }
+
+    #weather-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #weather-tips {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    body {
+        background-position: top center;
+    }
+
+    .container {
+        width: 90%;  
+        padding: 15px;
+    }
+
+    .city-input {
+        width: 90%;  
+        font-size: 1rem; 
+        border-radius: 50px; 
+    }
+
+    .search-btn {
+        width: 90%;  
+        font-size: 1rem;
+        margin-top: 5px;
+        border-radius: 50px;
+    }
+
+    h3#city-name {
+        font-size: 1.3rem;  
+    }
+
+    h4 {
+        font-size: 0.9rem;  
+    }
+
+    #weather-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .error-message {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #weather-tips {
+        padding: 10px;
+        font-size: 0.8rem;  
+    }
+}

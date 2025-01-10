@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+
+        <input type="text" placeholder="Enter city name" id="search-input" class="city-input">
+        <button id="search-btn" class="search-btn">Search</button>
+        <div id="error-message" class="error-message" style="display: none;">
+            Please enter a valid city name.
+        </div>      
+        <div id="weather-div">
+            <!-- <h4 id="temp-id">Temperature</h4> 
+            <p id="temp-value"></p> -->
+            <h3 id="city-name"></h3>
+            <img id="weather-icon" src="" alt="Weather Icon" />
+            <h4 id="date"></h4>
+            <h4>Temperature: <span id="temp-value"></span> °C</h4>
+            <h4 id="sunrise"></h4> 
+            <h4 id="sunset"></h4>
+            <h4 id="humidity">Humidity: </h4>
+            <h4 id="pressure">Pressure: </h4>
+            <h4 id="wind-speed">Wind Speed: </h4>
+            <h4 id="visibility">Visibility: </h4>
+            <h4 id="description">Weather: </h4>
+        </div>
+        <div id="weather-tips">
+            <!-- <h4>Weather Tips & Suggestions:</h4>
+            <p id="tips"></p> -->
+        </div>
+    </div>
+    <script src="script.js"> </script>
+</body>
+</html>
